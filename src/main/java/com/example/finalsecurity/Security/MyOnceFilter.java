@@ -21,22 +21,24 @@ public class MyOnceFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-//        if( jwtUtil.isvalid(request.getHeader("token"))){
-        if( request.getHeader("token").equals("yes")){
-            System.out.println("the token is valid");
-//            response.setHeader("token","this is the token value");
+            if(request.getRequestURI().contains("/login")){
+                filterChain.doFilter(request, response);
+            }
+            else if( jwtUtil.isvalid(request.getHeader("token").substring("Bearer ".length()))){
+                 System.out.println("the token is valid");
+                filterChain.doFilter(request, response);
 
-        }else {
-            throw new BadCredentialsException("Token Not Found");
-        }
-        filterChain.doFilter(request, response);
+            }else {
+                System.out.println("Error is occur");
+                throw new BadCredentialsException("The Token is Not valid");
+            }
 
     }
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request)  {
 //        System.out.println("-----------------------");
-        return request.getRequestURI().contains("/addUser");
+            return request.getRequestURI().contains("/addUser") ;
     }
 
 }

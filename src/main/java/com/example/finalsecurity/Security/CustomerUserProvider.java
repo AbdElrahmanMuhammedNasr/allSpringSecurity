@@ -39,7 +39,7 @@ public class CustomerUserProvider implements AuthenticationProvider {
                     System.out.println("--------------------------------------------");
                     System.out.println(SecurityContextHolder.getContext());
                     System.out.println("--------------------------------------------");
-                    System.out.println(jwtUtil.generateToken());
+//                    System.out.println(jwtUtil.generateToken());
                     System.out.println("--------------------------------------------");
                     return a;
                 }
