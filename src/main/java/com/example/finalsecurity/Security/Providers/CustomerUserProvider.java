@@ -1,6 +1,7 @@
-package com.example.finalsecurity.Security;
+package com.example.finalsecurity.Security.Providers;
 
 import com.example.finalsecurity.Security.JwtToken.JwtUtil;
+import com.example.finalsecurity.Security.UserServiceAndDetails.MyDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;

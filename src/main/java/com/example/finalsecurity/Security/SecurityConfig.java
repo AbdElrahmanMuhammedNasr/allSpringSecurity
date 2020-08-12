@@ -1,5 +1,8 @@
 package com.example.finalsecurity.Security;
 
+import com.example.finalsecurity.Security.Filters.MyOnceFilter;
+import com.example.finalsecurity.Security.Providers.CustomerUserProvider;
+import com.example.finalsecurity.Security.UserServiceAndDetails.MyDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

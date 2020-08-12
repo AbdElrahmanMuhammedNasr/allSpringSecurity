@@ -1,4 +1,4 @@
-package com.example.finalsecurity.Security;
+package com.example.finalsecurity.Security.UserServiceAndDetails;
 
 import com.example.finalsecurity.zModel.Users;
 import org.springframework.security.core.GrantedAuthority;

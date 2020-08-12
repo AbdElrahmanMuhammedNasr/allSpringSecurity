@@ -1,9 +1,8 @@
-package com.example.finalsecurity.Security;
+package com.example.finalsecurity.Security.UserServiceAndDetails;
 
 import com.example.finalsecurity.zModel.UserReop;
 import com.example.finalsecurity.zModel.Users;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

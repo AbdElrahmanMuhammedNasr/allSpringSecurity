@@ -1,4 +1,4 @@
-package com.example.finalsecurity.Security;
+package com.example.finalsecurity.Security.Filters;
 
 import com.example.finalsecurity.Security.JwtToken.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
