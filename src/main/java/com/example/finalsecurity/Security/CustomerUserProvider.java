@@ -1,5 +1,6 @@
 package com.example.finalsecurity.Security;
 
+import com.example.finalsecurity.Security.JwtToken.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -19,6 +20,9 @@ public class CustomerUserProvider implements AuthenticationProvider {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private JwtUtil jwtUtil;
+
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 
@@ -26,9 +30,17 @@ public class CustomerUserProvider implements AuthenticationProvider {
         String password =String.valueOf(authentication.getCredentials());
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         if (userDetails!=null){
+
                 if(passwordEncoder.matches(password, userDetails.getPassword())){
                     var a = new UsernamePasswordAuthenticationToken(username, password,userDetails.getAuthorities());
+
                     SecurityContextHolder.getContext().setAuthentication(a);
+
+                    System.out.println("--------------------------------------------");
+                    System.out.println(SecurityContextHolder.getContext());
+                    System.out.println("--------------------------------------------");
+                    System.out.println(jwtUtil.generateToken());
+                    System.out.println("--------------------------------------------");
                     return a;
                 }
         }

@@ -3,11 +3,7 @@ package com.example.finalsecurity.controllers;
 import com.example.finalsecurity.zModel.UserReop;
 import com.example.finalsecurity.zModel.Users;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
-import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,7 +15,7 @@ public class TestController {
     private PasswordEncoder passwordEncoder;
 
     @RequestMapping(value = "/test" , method = RequestMethod.GET)
-    public String test(  @RequestHeader("Authorization") String Data ){
+    public String test(){
         return "H  I";
     }
 
